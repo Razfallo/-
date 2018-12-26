@@ -1,4 +1,4 @@
-'''
+﻿'''
 MIT License
 
 Copyright (c) 2018 KenNg69
@@ -218,8 +218,8 @@ class Modmail(commands.Bot):
             return await ctx.send('This is not a modmail thread.')
         user_id = int(ctx.channel.topic.split(': ')[1])
         user = self.get_user(user_id)
-        em = discord.Embed(title='Thread Closed')
-        em.description = f'**{ctx.author}** has closed this modmail session.'
+        em = discord.Embed(title='Дело закрыто')
+        em.description = f'**{ctx.author}** закрыл вопрос.'
         em.color = discord.Color.red()
         try:
             await user.send(embed=em)
@@ -297,7 +297,7 @@ class Modmail(commands.Bot):
         if mod:
             fmt.color=discord.Color.green()
             fmt.set_author(name=str(author), icon_url=author.avatar_url)
-            fmt.set_footer(text='Moderator')
+            fmt.set_footer(text='Стафф боченка')
         else:
             fmt.color=discord.Color.gold()
             fmt.set_author(name=str(author), icon_url=author.avatar_url)
@@ -356,8 +356,8 @@ class Modmail(commands.Bot):
         if str(message.author.id) in blocked:
             return await message.author.send(embed=self.blocked_em)
 
-        em = discord.Embed(title='Thanks for the message!')
-        em.description = 'The moderation team will get back to you as soon as possible!'
+        em = discord.Embed(title='Будь терпелив, Страж!')
+        em.description = 'Авангард свяжется с тобой в ближайшее время!'
         em.color = discord.Color.green()
 
         if channel is not None:
